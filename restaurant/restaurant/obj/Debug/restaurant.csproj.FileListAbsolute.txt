@@ -18,3 +18,5 @@ C:\Users\Сигма-М-1\Desktop\Igoor\CAFE\restaurant\restaurant\bin\Debug\Enti
 C:\Users\Сигма-М-1\Desktop\Igoor\CAFE\restaurant\restaurant\bin\Debug\System.Data.SQLite.xml
 C:\Users\Сигма-М-1\Desktop\Igoor\CAFE\restaurant\restaurant\bin\Debug\System.Data.SQLite.dll.config
 C:\Users\Сигма-М-1\Desktop\Igoor\CAFE\restaurant\restaurant\obj\Debug\restaurant.csproj.CopyComplete
+C:\Users\Сигма-М-1\Desktop\Igoor\CAFE\restaurant\restaurant\obj\Debug\restaurant.ADDsot.resources
+C:\Users\Сигма-М-1\Desktop\Igoor\CAFE\restaurant\restaurant\obj\Debug\restaurant.DELsot.resources

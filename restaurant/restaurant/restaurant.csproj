@@ -71,6 +71,18 @@
     <Compile Include="ADDpost.Designer.cs">
       <DependentUpon>ADDpost.cs</DependentUpon>
     </Compile>
+    <Compile Include="ADDsot.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ADDsot.Designer.cs">
+      <DependentUpon>ADDsot.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DELsot.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DELsot.Designer.cs">
+      <DependentUpon>DELsot.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -81,6 +93,12 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="ADDpost.resx">
       <DependentUpon>ADDpost.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ADDsot.resx">
+      <DependentUpon>ADDsot.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DELsot.resx">
+      <DependentUpon>DELsot.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>

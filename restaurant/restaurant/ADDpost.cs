@@ -21,7 +21,7 @@ namespace restaurant
 
         private void button1_Click(object sender, EventArgs e)
         {
-            SQLiteConnection con = new SQLiteConnection(@"DataSource=КАФЭ.db;Version=3;");
+            SQLiteConnection con = new SQLiteConnection(@"DataSource=КАФЕ.db;Version=3;");
             SQLiteCommand cmd = new SQLiteCommand();
             cmd.Connection = con;
             con.Open();
