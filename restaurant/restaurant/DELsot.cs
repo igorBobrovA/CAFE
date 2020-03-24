@@ -17,21 +17,35 @@ namespace restaurant
         {
             InitializeComponent();
         }
-
+        SQLiteConnection con = new SQLiteConnection(@"DataSource=КАФЕ.db;Version=3;");
+        SQLiteCommand cmd = new SQLiteCommand();
         private void button1_Click(object sender, EventArgs e)
         {
-
+            cmd.Connection = con;
+            con.Open();
+            cmd.CommandText = "UPDATE СОТРУДНИКИ " +
+                              "SET дата_увольнения = '" + dateTimePicker1.Value.ToShortDateString() + "' " +
+                              ", причина_увольнения = '" + richTextBox1.Text + "' " +
+                              "WHERE фио = '" + comboBox1.Text + "'";
+            cmd.ExecuteNonQuery();
+            cmd.Reset();
+            con.Close();
+            DialogResult res = MessageBox.Show("Вы уволили сотрудника\nУволить ещё кого-то? ", "увольнение", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (res == DialogResult.Yes)
+            {
+                comboBox1.Text = "";
+                richTextBox1.Text = "";
+            }
+            else this.Close();
         }
 
         private void DELsot_Load(object sender, EventArgs e)
         {
-            textBox2.Text = DateTime.Now.ToLongDateString().ToString();
-            SQLiteConnection con = new SQLiteConnection(@"DataSource=КАФЕ.db;Version=3;");
-            SQLiteCommand cmd = new SQLiteCommand();
             cmd.Connection = con;
             con.Open();
             cmd.CommandText = "SELECT фио " +
-                              "FROM СОТРУДНИКИ";
+                              "FROM СОТРУДНИКИ " +
+                              "WHERE дата_увольнения = ''";
             SQLiteDataReader reader = cmd.ExecuteReader();
             while (reader.Read())
             {
@@ -39,6 +53,10 @@ namespace restaurant
             }
             cmd.Reset();
             con.Close();
+            if (comboBox1.Items.Count == 0)
+            {
+                comboBox1.Text = "Нету сотрудников:(";
+            }
         }
     }
 }

@@ -27,7 +27,6 @@ namespace restaurant
 
         private void ADDsot_Load(object sender, EventArgs e)
         {
-            textBox4.Text = DateTime.Now.ToShortDateString().ToString();
             cmd.Connection = con;
             con.Open();
             cmd.CommandText = "SELECT наименование " +
@@ -45,7 +44,7 @@ namespace restaurant
         {
             cmd.Connection = con;
             con.Open();
-            if (textBox1.Text != "" && textBox2.Text != "" && textBox3.Text != "" && textBox4.Text != "" && comboBox1.Text != "")
+            if (textBox1.Text != "" && textBox2.Text != "" && textBox3.Text != "" && comboBox1.Text != "")
             {
                 cmd.CommandText = "SELECT фио FROM СОТРУДНИКИ WHERE фио = '" + textBox1.Text + "'";
                 int scalar = Convert.ToInt32(cmd.ExecuteScalar());
@@ -56,7 +55,7 @@ namespace restaurant
                     cmd.CommandText = "INSERT into СОТРУДНИКИ(фио, телефон, должность, зарплата, дата_приёма) " +
                                       "VALUES('" + textBox1.Text + "', '" + textBox2.Text + "', " +
                                       "(SELECT ID_должности FROM ДОЛЖНОСТЬ WHERE наименование = '" + comboBox1.Text + "')" +
-                                      ", '" + textBox3.Text + "', '" + textBox4.Text + "')";
+                                      ", '" + textBox3.Text + "', '" + dateTimePicker1.Value.ToShortDateString() + "')";
                     cmd.ExecuteNonQuery();
                     cmd.Reset();
                     DialogResult res = MessageBox.Show("Вы добавили сотрудника \nДобавить нового?", "УСП.операция", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
@@ -70,7 +69,6 @@ namespace restaurant
                         textBox1.Text = "";
                         textBox2.Text = "";
                         textBox3.Text = "";
-                        textBox4.Text = "";
                         comboBox1.Text = "";
                     }
                 }
@@ -78,7 +76,7 @@ namespace restaurant
             }
             else
             {
-                MessageBox.Show("Вы не зарегистрировали сотрудника:" +
+                     MessageBox.Show("Вы не зарегистрировали сотрудника:" +
                     "\n не все поля заполнены", "ошибка", MessageBoxButtons.OK, MessageBoxIcon.Hand);
             }
             con.Close();

@@ -65,6 +65,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ADDorder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ADDorder.Designer.cs">
+      <DependentUpon>ADDorder.cs</DependentUpon>
+    </Compile>
     <Compile Include="ADDpost.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -91,6 +97,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="ADDorder.resx">
+      <DependentUpon>ADDorder.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ADDpost.resx">
       <DependentUpon>ADDpost.cs</DependentUpon>
     </EmbeddedResource>

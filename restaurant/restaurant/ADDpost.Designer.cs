@@ -38,7 +38,7 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(12, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(213, 27);
+            this.label1.Size = new System.Drawing.Size(265, 34);
             this.label1.TabIndex = 0;
             this.label1.Text = "Введите должность";
             // 
@@ -46,7 +46,7 @@
             // 
             this.textBox1.Location = new System.Drawing.Point(12, 44);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(213, 35);
+            this.textBox1.Size = new System.Drawing.Size(213, 42);
             this.textBox1.TabIndex = 1;
             // 
             // button1
@@ -61,9 +61,9 @@
             // 
             // ADDpost
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 27F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(17F, 34F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(237, 135);
+            this.ClientSize = new System.Drawing.Size(236, 135);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label1);

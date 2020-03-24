@@ -37,6 +37,9 @@ namespace restaurant
         {
             if (tabControl1.SelectedIndex == 1)
             {
+                dataGridView1.Rows.Clear();
+                dataGridView2.Rows.Clear();
+                List<string> list1 = new List<string>();
                 List<string> list = new List<string>();
                 cmd.Connection = con;
                 con.Open();
@@ -56,6 +59,17 @@ namespace restaurant
                              reader.GetValue(7));
                 }
                 cmd.Reset();
+                cmd.CommandText = "Select * " +
+                                  "From ДОЛЖНОСТЬ " +
+                                  "";
+                SQLiteDataReader reader1 = cmd.ExecuteReader();
+                while (reader1.Read())
+                {
+                    dataGridView2.Rows.Add();
+                    list1.Add(reader1.GetValue(0) + "," +
+                              reader1.GetValue(1));
+                }
+                cmd.Reset();
                 con.Close();
                 for (int i = 0; i < list.Count; i++)
                 {
@@ -65,6 +79,14 @@ namespace restaurant
                         dataGridView1[j, i].Value = mas[j];
                     }
                 }
+                for (int i = 0; i < list1.Count; i++)
+                {
+                    string[] NoMassive = list1[i].Split(',');
+                    for (int j = 0; j < 2; j++)
+                    {
+                        dataGridView2[j, i].Value = NoMassive[j];
+                    }
+                }
             }
         }
 
@@ -72,6 +94,17 @@ namespace restaurant
         {
             Form DELsot = new DELsot();
             DELsot.Show();
+        }
+
+        private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            Form ADDorder = new ADDorder();
+            ADDorder.Show();
         }
     }
 }

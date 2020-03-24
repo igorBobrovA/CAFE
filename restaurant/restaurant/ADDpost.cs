@@ -38,6 +38,12 @@ namespace restaurant
                 cmd.ExecuteNonQuery();
             }
             con.Close();
+            DialogResult res = MessageBox.Show("Вы добавили должность\nДобавить ещё? ", "Добавление", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (res == DialogResult.Yes)
+            {
+                textBox1.Text = "";
+            }
+            else this.Close();
         }
     }
 }
